@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X | Box</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" /> <!-- Recommended -->
+
+</head>
+<style>
+    @font-face {
+        font-family: reo;
+        src: url(./NBInternationalProBoo\ \(1\).ttf);
+    }
+
+    @font-face {
+        font-family: reo1;
+        src: url(./Rejouice-Headline\ \(1\).ttf);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: reo;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    .page1 {
+        width: 100%;
+        height: 100vh;
+        background-color: #000000;
+        position: relative;
+
+    }
+
+    .page1 video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+    }
+
+    .page1-content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    nav {
+        color: white;
+        width: 92%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2vw 3vw;
+    }
+
+    nav h3 {
+        font-size: 1.6vw;
+        font-weight: 100;
+    }
+
+    nav h4 {
+        font-size: 1.6vw;
+        font-weight: 100;
+    }
+
+    .page1-content h1 span {
+        color: whitesmoke;
+        font-family: reo1;
+        font-size: 20vw;
+        font-weight: 100;
+       justify-content: flex-end;
+    }
+
+    .cursor {
+        height: 7vw;
+        width: 7vw;
+        background-color: #ff5f38;
+        border-radius: 50%;
+        position: fixed;
+        z-index: 9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+    }
+
+    .cursor h5 {
+        font-size: 1.2vw;
+    }
+
+    .page2 {
+        width: 100%;
+        height: 70vh;
+
+    }
+
+    .wrapper {
+        width: 100%;
+        margin-top: 4vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper .line {
+        width: 90%;
+        height: 70px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .wrapper .line span {
+        position: absolute;
+        font-size: 3rem;
+        line-height: 4.2rem;
+    }
+
+    .page3 {
+        width: 100%;
+        min-height: 100vh;
+        padding: 3vw;
+        position: relative;
+    }
+
+    .page-content {
+        text-align: center;
+    }
+
+    .page-content h4 {
+        font-size: 1vw;
+        margin-bottom: 1vw;
+        font-weight: 500;
+    }
+
+    .page-content h2 {
+        font-size: 3vw;
+
+        font-weight: bold;
+    }
+
+    .page-content h4 span {
+        background: #000;
+        color: aliceblue;
+        padding: 3px 5px;
+        border-radius: 25px;
+    }
+
+    .page3-elements {
+        height: 70vh;
+        width: 100%;
+        padding: 3vw;
+       
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+        justify-content: space-between;
+    }
+
+    .page3-elements .box {
+        height: 100%;
+        width: 33%;
+        background-color: #000000;
+        position: relative;
+    }
+
+    .page3-elements .box video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+
+    }
+    .page3-elements .box img  {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      position: absolute;
+      transition: all linear .5s;
+      object-position: center;
+    
+
+    }
+    .page3-elements .box:hover img  {
+      opacity: 0;
+    
+
+    }
+    .page4{
+        width: 100%;
+        min-height: 100vh;
+      display: flex;
+        padding: 3vw;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+     
+        /* filter: blur(3px); */
+    }
+    .page4 video{
+        height: 100vh;
+      
+    }
+    .page4 svg{
+        position: absolute;
+        height: 60%;
+    }
+    .page5{
+        width: 100%;
+        height: 100vh;
+    
+        padding: 3vw;
+        position: relative;
+        overflow: hidden;
+       
+    }
+    .swipjs{
+        height: 60vh;
+        width: 100%;
+        margin-top: -2vw;
+        position: relative;
+      
+    }
+    .swiper {
+      width: 130%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+        width: 400px;
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-end;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 19%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  .page6{
+    width: 100%;
+    background-color: #ff5f38;
+   position: relative;
+  }
+  .bann_img{
+    height: 60vh;
+    width: 70%;
+    object-fit: cover;
+    position: relative;
+  }
+  .page_future{
+    width: 100%;
+    height: 100%;
+ 
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+margin-top: 3vw;
+position: relative;
+}
+
+
+.page_future video{
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    
+    /* transform: translate(-50%, -50%); */
+}
+.ftext{
+   
+
+ position: absolute;
+ top: 50%;
+ right: 40%;
+ text-align: center;
+ background-color: white;
+ padding: 2vw;
+ border-radius: 15px;
+}
+
+</style>
+
+<body>
+    <div class="main">
+        <div class="page1">
+            <div class="cursor">
+                <h5>Play Reel</h5>
+            </div>
+            <video src="./video3.mp4" autoplay muted loop></video>
+            <div class="page1-content">
+                <nav>
+                    <h3>The Qna Classes.</h3>
+                    <h4>login</h4>
+                </nav>
+                <h1>
+                    <span>Q</span>
+                    <span>n</span>
+                    <span>a</span>
+                    <span>C</span>
+                    <span>l</span>
+                    <span>a</span>
+                    <span>s</span>
+                    <span>s</span>
+                </h1>
+
+            </div>
+        </div>
+        <div class="page2">
+
+            <div class="wrapper">
+                <div class="line">
+                    <span>We are a digital brand accelerator for fast-growing .Our mission is to transform </span>
+                </div>
+                <div class="line">
+                    <span> founders' visions into remarkable brands.All our clients drive their businesses </span>
+                </div>
+                <div class="line">
+                    <span>with sustainability at the forefront. Choose traditional compensation or an </span>
+                </div>
+                <div class="line">
+                    <span>equity offset of up to 50% of our fees through our Venture Model—your vision,</span>
+                </div>
+                <div class="line">
+                    <span>your decision.&nbsp;In any case, we are your new unfair advantage.</span>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="page3">
+            <div class="page-content">
+                <h4>
+                    Agency & Ventures <span>Modal</span>
+                </h4>
+                <h2>
+                    Explore Our Services
+                </h2>
+                <h2>
+                    & engagement models
+                </h2>
+            </div>
+            <div class="page3-elements">
+                <div class="box">
+                    <img src="./abdulla-iyaan-hvabpSfjv98-unsplash.jpg" alt="">
+                    <video autoplay muted loop src="./v1.mp4"></video>
+                </div>
+                <div class="box">
+                    <img src="./busra-salkim-MWJY7Ienj7M-unsplash.jpg" alt="">
+                    <video autoplay muted loop src="./v2.mp4"></video>
+                </div>
+                <div class="box">
+                    <img src="./orhan-pergel-2FzXwh_qwbs-unsplash.jpg" alt="">
+                    <video autoplay muted loop src="./v3.mp4"></video>
+                </div>
+            </div>
+        </div>
+        <div class="page4">
+            <video src="./RJ-BALL-BLUE-ORANGE-scaled.webm" autoplay muted loop></video>
+            <svg class="abs tl:0 fit transform rotate:-90deg" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="49" stroke="#fff" stroke-width="0.25" fill="none" class="o:0.3 $$2$$ $$3$$ $$4$$ (.in-view):tween:all,2.8s,easeOutSlow dasharray:308 dashoffset:616 (.in-view):dashoffset:554.4"></circle>
+                <circle cx="50" cy="50" r="49" stroke="#fff" stroke-width="0.25" fill="none" class="$$5$$ $$6$$ $$7$$ (.in-view):tween:all,2.8s,easeOutSlow dasharray:308 dashoffset:308 (.in-view):dashoffset:246.4"></circle>
+            </svg>
+            <svg class="abs tl:0 fit transform rotate:0 $$8$$ (.in-view):tween:all,2.8s,easeOutSlow (.in-view):rotate:72deg" viewBox="0 0 100 100">
+                <circle cx="50" cy="1" r="1" fill="#fff"></circle>
+            </svg>
+        </div>
+        <div class="page5">
+
+            <div class="gi" style="border-bottom: 1px solid black;">
+                <h1 style="font-size: 3vw; text-align: center;font-family: reo1;">GET IN TOUCH</h1>
+            </div>
+            <div class="swipjs ">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"> <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img src="https://images.unsplash.com/photo-1555338371-67d1d00c56e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D" alt="">
+                        <img src="https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?q=80&w=2895&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img src="https://images.unsplash.com/photo-1630312465536-5c6b1f76dc3f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D" alt="">
+                        <img src="https://images.unsplash.com/photo-1612825173281-9a193378527e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8" alt=""></div>
+                      <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img src="https://images.unsplash.com/photo-1555338371-67d1d00c56e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D" alt="">
+                        <img src="https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?q=80&w=2895&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img src="https://images.unsplash.com/photo-1630312465536-5c6b1f76dc3f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D" alt="">
+                        <img src="https://images.unsplash.com/photo-1612825173281-9a193378527e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8" alt="">
+                      </div>
+                   
+                    
+                    </div>
+              
+                  </div>
+            </div>
+        </div>
+        <div class="page6">
+<div class="bann_img">
+    <img src="./busra-salkim-MWJY7Ienj7M-unsplash.jpg" style=" height: 100%;
+    width: 100%;object-position: center;  object-fit: cover;"  alt="">
+</div>
+        </div>
+        <div class="page_future">
+            <video src="./back.mp4" autoplay muted loop></video>
+            <div class="ftext">
+                <h1>Think of Future</h1>
+                <button class="p-2" style="border-radius: 50px; border: 1px solid rgb(134, 134, 134);background-color: transparent;color: rgb(161, 161, 161);">Join the Movement</button>
+
+            </div>
+        </div>
+        <div class="page7">
+            <div class="container-fluid m-5" >
+                
+<div class="row" style="min-height: 100vh; width: 100%;">
+    <div class="col anime1">
+        <img class="img" src="./faces.png" style="height: 70vh;width: auto; object-fit:cover;object-position: center;" alt="">
+    </div>
+    <div class="col">
+        <div class="paragraph p-5">
+<p style="font-size: 1vw;font-weight: 100;">TEACHERS</p>
+           <p style="font-size: 3vw;font-weight: bold;"> “I’m finally able to truly differentiate my classroom. This has been priceless for my students’ engagement.”</p>
+<p style="font-size: .7vw;font-weight: 100;color: #8c8c8c;">UDAYA LAKSHMI PALAPALA / Middle school Coordinator / Hyderabad, Telangana</p>
+<p style="font-size: 1.4vw;font-weight: 100;padding-right:2vw ;">
+    We empower teachers to support their entire classroom. 90% of US teachers who have used Qna Classes have found us effective.
+</p>
+<button class="btn btn-primary p-3 mt-4">Teachers, start here </button>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+        <div class="page8">
+            <div class="container-fluid m-5" >
+                
+<div class="row" style="min-height: 100vh; width: 100%;">
+    <div class="col">
+        <div class="paragraph p-5">
+<p style="font-size: 1vw;font-weight: 100;color: #6f6f6f;">LEARNERS AND STUDENTS</p>
+           <p style="font-size: 3vw;font-weight: bold;"> <span class="p-1" style="background-color: #BFE6DD;">You</span> can learn anything.</p>
+
+<p style="font-size: 1.4vw;font-weight: 100;padding-right:2vw ;">
+    Build a deep, solid understanding in math, science, grammar, history, SAT®, and more.
+</p>
+<button class="btn btn-primary p-3 mt-4">Learners, Start here</button>
+        </div>
+    </div>
+    <div class="col anime2">
+        <img src="./laptop.png" style="height: 50vh;width: auto; object-fit:cover;object-position: center;" alt="">
+    </div>
+    
+
+</div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Minified UMD bundle -->
+    <script src="https://unpkg.com/split-type"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+
+
+
+        function locomotive_scroll() {
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+
+            const locoScroll = new LocomotiveScroll({
+                el: document.querySelector(".main"),
+                smooth: true
+            });
+            // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+            locoScroll.on("scroll", ScrollTrigger.update);
+
+            // tell ScrollTrigger to use these proxy methods for the ".main" element since Locomotive Scroll is hijacking things
+            ScrollTrigger.scrollerProxy(".main", {
+                scrollTop(value) {
+                    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+                }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+                getBoundingClientRect() {
+                    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+                },
+                // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+                pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
+            });
+
+
+
+
+            // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+            ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+            // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+            ScrollTrigger.refresh();
+
+
+        }
+        locomotive_scroll()
+
+        function cursoeeffect() {
+            var page1Contant = document.querySelector('.page1-content')
+            var cursor = document.querySelector('.cursor');
+            page1Contant.addEventListener('mousemove', function (dets) {
+
+                gsap.to(cursor, {
+                    x: dets.x,
+                    y: dets.y,
+                })
+            })
+
+            page1Contant.addEventListener('mouseenter', function (dets) {
+                gsap.to(cursor, {
+                    scale: 1,
+                    opacity: 1,
+                });
+            })
+            page1Contant.addEventListener('mouseleave', function (dets) {
+                gsap.to(cursor, {
+                    scale: 0,
+                    opacity: 0,
+                });
+            })
+        }
+        cursoeeffect();
+
+        const textrev = gsap.timeline();
+
+        textrev.from(".line span", 1.8, {
+            y: 200,
+            ease: "back.out",
+            delay: 1,
+            duration: 1,
+            skewY: 10,
+            stagger: {
+                amount: 0.4,
+
+            },
+            scrollTrigger: {
+                trigger: ".page2",
+                start: "top 50%",
+                scroller: ".main",
+
+                end: "top 20%",
+                scrub: 2
+
+            }
+        });
+
+
+document.querySelector(".ftext button")
+.addEventListener("mouseover",function() {
+gsap.to(".page_future video",{
+    opacity:1,
+    duration:1,
+    ease:Power4,
+})
+})
+document.querySelector(".ftext button")
+.addEventListener("mouseleave",function() {
+gsap.to(".page_future video",{
+    opacity:0,
+    duration:1,
+    ease:Power4,
+})
+})
+
+
+    </script>
+     <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          autoplay:{
+            delay:0,
+          },
+          speed: 20000,
+        });
+
+
+      
+      </script>
+      <!--  Gsap is needed for Basic Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- Scroll Trigger is needed for Scroll Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Three.js is needed for 3d Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+
+<!-- ControlKit is needed for Debug Panel -->
+<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+<script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script> <!-- Recommended -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>
